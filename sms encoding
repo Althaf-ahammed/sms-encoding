@@ -1,0 +1,20 @@
+def sms_encoding(data):
+    vowels='aeiouAEIOU'
+    word=data.split()
+    res=''
+    
+    for i in range(len(word)):
+        vowel_word=''
+        if(i>0):
+            res+=' '
+        for j in range(len(word[i])):
+            if(word[i][j] not in vowels):
+                res+=word[i][j]
+            else:
+                vowel_word+=word[i][j]
+        if(vowel_word==word[i]):     
+            res+=word[i]  
+    return res
+    
+data="I love Python"
+print(sms_encoding(data))
